@@ -1,6 +1,9 @@
 package com.example.gogos.testtask;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
@@ -30,9 +33,22 @@ public class MainActivity extends AppCompatActivity {
         } else if (password.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), R.string.p_empty, Toast.LENGTH_LONG).show();
             return false;
+        } else if (!checkIfConnectedToInternet()) {
+            Toast.makeText(getApplicationContext(), R.string.no_internet, Toast.LENGTH_SHORT).show();
         } else {
             return true;
         }
+        return false;
+    }
+
+    private boolean checkIfConnectedToInternet() {
+        ConnectivityManager connectivityManager =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo =
+                connectivityManager.getActiveNetworkInfo();
+        boolean isConnected = networkInfo
+                != null && networkInfo.isConnectedOrConnecting();
+        return isConnected;
     }
 
     private void doLogin() {

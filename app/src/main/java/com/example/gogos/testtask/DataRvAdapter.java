@@ -28,7 +28,8 @@ public class DataRvAdapter extends RecyclerView.Adapter<DataRvAdapter.myDataView
 
     @Override
     public myDataViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_rv__adapter, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R
+                .layout.activity_rv__adapter, parent, false);
         return new myDataViewHolder(view);
     }
 
