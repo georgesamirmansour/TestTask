@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TestTask</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="password">password</string>
+    <string name="login_button">Login</string>
+    <string name="uName_empty">User name can\'t be empty</string>
+    <string name="p_empty">password can\'t be empty!</string>
+</resources>
